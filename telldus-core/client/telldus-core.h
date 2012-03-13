@@ -47,6 +47,7 @@ extern "C" {
 	TELLSTICK_API int WINAPI tdUnregisterCallback( int callbackId );
 	TELLSTICK_API void WINAPI tdClose(void);
 	TELLSTICK_API void WINAPI tdReleaseString(char *string);
+	TELLSTICK_API char * WINAPI tdVersion(void);
 
 	TELLSTICK_API int WINAPI tdTurnOn(int intDeviceId);
 	TELLSTICK_API int WINAPI tdTurnOff(int intDeviceId);

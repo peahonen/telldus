@@ -58,3 +58,5 @@ EXPORTS
 	tdSetControllerValue @42
 	tdRemoveController @43
 	tdRegisterControllerEvent @44
+
+	tdVersion @45

@@ -4,6 +4,8 @@ ENDIF(COMMAND cmake_policy)
 
 FIND_PACKAGE( SignTool REQUIRED )
 
+ADD_DEFINITIONS( -DVERSION="${DISPLAYED_VERSION}" )
+
 ######## Non configurable options  ########
 SET( telldus-core_SRCS
 	CallbackDispatcher.cpp

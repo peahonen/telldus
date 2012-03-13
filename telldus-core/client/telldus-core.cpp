@@ -179,6 +179,20 @@ void WINAPI tdReleaseString(char *string) {
 }
 
 /**
+ * Get the library version.
+ * The returned version is on the format major.minor.patch (e.g. 2.1.2) or
+ * major.minor.patch_sub (e.g. 2.1.2_dev).
+ *
+ * @return The version as a string that must be freed by calling
+ * tdReleaseString().
+ *
+ * Added in version 2.1.2.
+ **/
+char * WINAPI tdVersion(void) {
+  return wrapStdString(VERSION);
+}
+
+/**
  * Turns a device on.
  * Make sure the device supports this by calling tdMethods() before any
  * call to this function.
