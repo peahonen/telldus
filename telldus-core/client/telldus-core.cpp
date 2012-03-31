@@ -188,7 +188,7 @@ void WINAPI tdReleaseString(char *string) {
  * @since Version 2.1.2
  **/
 char * WINAPI tdVersion(void) {
-  return wrapStdString(VERSION);
+	return wrapStdString(VERSION);
 }
 
 /**
