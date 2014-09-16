@@ -110,6 +110,8 @@ TDSensorEventDispatcher::TDSensorEventDispatcher(int id, void *func, void *conte
 
 void TDSensorEventDispatcher::execute(EventDataRef eventData) {
 	SensorEventCallbackData *data = dynamic_cast<SensorEventCallbackData *>(eventData.get());
+        fprintf(stderr, "TDSensorEventDispatcher::execute(%p) id=%d\n",
+                data, d->id);
 	if (!data) {
 		return;
 	}

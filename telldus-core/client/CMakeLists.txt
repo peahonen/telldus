@@ -21,9 +21,6 @@ SET( telldus-core_PUB_HDRS
 	telldus-core.h
 )
 
-FIND_PACKAGE(Threads)
-LIST(APPEND telldus-core_LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
-
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
 
 ######## Configurable options for the platform  ########
@@ -76,6 +73,9 @@ ELSE (APPLE)
 		-D_LINUX
 	)
 ENDIF (APPLE)
+
+FIND_PACKAGE(Threads)
+LIST(APPEND telldus-core_LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
 
 
 

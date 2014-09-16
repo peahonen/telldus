@@ -97,6 +97,8 @@ void Client::run() {
 		std::wstring clientMessage = d->eventSocket.read(1000);  // testing 5 second timeout
 
 		while(clientMessage != L"") {
+                  fprintf(stderr, "Client::run: clientMessage='%s'\n",
+                          TelldusCore::wideToString(clientMessage).c_str());
 			// a message arrived
 			std::wstring type = Message::takeString(&clientMessage);
 			if(type == L"TDDeviceChangeEvent") {

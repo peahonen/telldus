@@ -45,6 +45,8 @@ void CallbackMainDispatcher::execute(CallbackStruct::CallbackType type, EventDat
 			if ( (*callback_it)->type() != type ) {
 				continue;
 			}
+                        fprintf(stderr, "CallbackMainDispatcher::execute(%d) id=%d\n",
+                                type, (*callback_it)->id());
 			(*callback_it)->queue(eventDataRef);
 		}
 	}
@@ -67,6 +69,8 @@ int CallbackMainDispatcher::registerCallback(CallbackStruct::CallbackType type, 
 	} else {
 		return -1;
 	}
+        fprintf(stderr, "CallbackMainDispatcher::registerCallback(type=%d) -> id=%d\n",
+                type, id);
 	d->callbackList.push_back(callback);
 	return id;
 }
@@ -84,6 +88,7 @@ int CallbackMainDispatcher::unregisterCallback(int callbackId) {
 		}
 	}
 	if (newEventList.size()) {
+          fprintf(stderr, "CallbackMainDispatcher::unregisterCallback(%d)\n", callbackId);
 		CallbackList::iterator it = newEventList.begin();
 		delete (*it);
 		newEventList.erase(it);
